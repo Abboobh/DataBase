@@ -9,16 +9,8 @@ namespace DataBase
 {
     internal class DataBase
     {
-        private class Order : IComparable
+        private class Order
         {
-            public int CompareTo(object obj)
-            {
-                if ((obj == null) || (!(obj is Order)))
-                    return 0;
-                else
-                    return string.Compare(_name_order, ((Order)obj)._name_order);
-            }
-
             public Order()
             {
                 AddCount();
@@ -90,8 +82,8 @@ namespace DataBase
 
             int result = _orders.BinarySearch(new Order { _name_order = order });
 
-            return _orders[result]._id + " " + _orders[result]._name_order + " " 
-                 + _orders[result]._name_orderer + " " + _orders[result].SumPrice();
+            return sortedlist[result]._id + " " + sortedlist[result]._name_order + " " 
+                 + sortedlist[result]._name_orderer + " " + sortedlist[result].SumPrice();
         }
         public void PrintInfo()
         {

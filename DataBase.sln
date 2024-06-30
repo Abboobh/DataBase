@@ -5,10 +5,6 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "DataBase\DataBase.csproj", "{A15D66AA-F37E-4CF5-A35F-69E8FC78232A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend.Android", "Frontend\Frontend.Android\Frontend.Android.csproj", "{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "Frontend\Frontend\Frontend.csproj", "{21586EB2-278B-4810-895E-BA94FC1D08AF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,36 +27,6 @@ Global
 		{A15D66AA-F37E-4CF5-A35F-69E8FC78232A}.Release|x64.Build.0 = Release|Any CPU
 		{A15D66AA-F37E-4CF5-A35F-69E8FC78232A}.Release|x86.ActiveCfg = Release|Any CPU
 		{A15D66AA-F37E-4CF5-A35F-69E8FC78232A}.Release|x86.Build.0 = Release|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Debug|x64.Build.0 = Debug|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Debug|x64.Deploy.0 = Debug|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Debug|x86.Build.0 = Debug|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Debug|x86.Deploy.0 = Debug|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Release|x64.ActiveCfg = Release|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Release|x64.Build.0 = Release|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Release|x64.Deploy.0 = Release|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Release|x86.ActiveCfg = Release|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Release|x86.Build.0 = Release|Any CPU
-		{8CB4348B-F65C-42E6-8AFB-7616D5783AD6}.Release|x86.Deploy.0 = Release|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Debug|x64.Build.0 = Debug|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Debug|x86.Build.0 = Debug|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Release|x64.ActiveCfg = Release|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Release|x64.Build.0 = Release|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Release|x86.ActiveCfg = Release|Any CPU
-		{21586EB2-278B-4810-895E-BA94FC1D08AF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,9 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Frontend\Frontend.Android\Frontend.Android.csproj" />
-    <ProjectReference Include="..\Frontend\Frontend\Frontend.csproj" />
-  </ItemGroup>
-
 </Project>
