@@ -1,4 +1,5 @@
 ﻿using Mysqlx.Crud;
+using System.Diagnostics;
 
 namespace DataBase
 {
@@ -130,9 +131,33 @@ namespace DataBase
 
             return sum;
         }
-        public void SetStatus(int index)
+        public void SetStatusReady(int index)
         {
-
+            _orders[index]._status = STATUS.READY;
+        }
+        public void SetStatusReady(string order)
+        {
+            foreach (var item in _orders)
+            {
+                if (item._name_order == order)
+                {
+                    SetStatusReady(item._id);
+                }
+            }
+        }
+        public void SetStatusUnReady(int index)
+        {
+            _orders[index]._status = STATUS.UNREDY;
+        }
+        public void SetStatusUnReady(string order)
+        {
+            foreach (var item in _orders)
+            {
+                if (item._name_order == order)
+                {
+                    SetStatusReady(item._id);
+                }
+            }
         }
 
         /*-------------Методы информации--------------*/

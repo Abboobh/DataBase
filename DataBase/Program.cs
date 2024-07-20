@@ -11,7 +11,9 @@ namespace DataBase
                    "1 - Добавить заказ\n" +
                    "2 - Добавить цену за раскрой в заказ\n" +
                    "3 - Просмотреть заказ\n" +
-                   "4 - Удалить цену за раскрой из заказа\n");
+                   "4 - Удалить цену за раскрой из заказа\n" +
+                   "5 - Изменить статус заказа на \"Выполнено\"\n" +
+                   "6 - Изменить статус заказа на \"Не выполнено\"");
         }
         public static void AddOrder(ref DataBase dataBase)
         {
@@ -73,13 +75,24 @@ namespace DataBase
         }
         public static void PrintOrder(ref DataBase dataBase)
         {
-
             Console.WriteLine("Введите номер заказа");
             string name_order = Console.ReadLine();
             Console.Clear();
             dataBase.PrintOrderInfo(name_order);
             Console.WriteLine("Для продолжения нажмите любую кнопку");
             Console.ReadKey();
+        }
+        public static void SetStatusReady(ref DataBase dataBase)
+        {
+            Console.WriteLine("Введите номер заказа");
+            string name_order = Console.ReadLine();
+            dataBase.SetStatusReady(name_order);
+        }
+        public static void SetStatusUnReady(ref DataBase dataBase)
+        {
+            Console.WriteLine("Введите номер заказа");
+            string name_order = Console.ReadLine();
+            dataBase.SetStatusUnReady(name_order);
         }
         public static void TestDataBase(ref DataBase dataBase)
         {
@@ -119,6 +132,13 @@ namespace DataBase
 
                     case 4:
                         RemovePrice(ref dataBase);
+                        break;
+
+                    case 5:
+                        SetStatusReady(ref dataBase);
+                        break;
+                    case 6:
+                        SetStatusUnReady(ref dataBase);
                         break;
                     default:
                         Console.WriteLine("Команды с таким номером не существует");
