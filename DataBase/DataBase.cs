@@ -1,8 +1,15 @@
-﻿namespace DataBase
+﻿using Mysqlx.Crud;
+
+namespace DataBase
 {
     internal class DataBase
     {
         public const int TABLINE = 110;
+        public const int WHITESPACE = 25;
+
+        public enum STATUS
+        { READY, UNREDY}
+
         private class Order
         {
             public Order()
@@ -26,6 +33,7 @@
             public string _name_order = "";
             public string _name_orderer = "";
             public int _id = 0;
+            public STATUS _status = STATUS.UNREDY;
 
             public List<Tuple<int, int>> _price = new List<Tuple<int, int>>();
             public void AddPrice(int price)
@@ -56,17 +64,19 @@
         /*--------------Методы упрощения---------------*/
         private static void PrintHat()
         {
-            Console.WriteLine("[ID]\t\t\t\t[Order]\t\t\t\t[Orderer]\t\t\t[Sum price]");
-            for (int tab = 0; tab < TABLINE; tab++)
-            {
-                Console.Write("_");
-            }
+            Console.WriteLine("[ID]" + new string(' ', 23) +
+                              "[Order]" + new string(' ', 20) +
+                              "[Orderer]" + new string(' ', 18) + "[Sum price]");
+            Console.WriteLine(new string('_', TABLINE));
             Console.WriteLine();
         }
         private static string PrintBody(Order order)
         {
-            return "[" + order._id + "]\t\t\t\t[" + order._name_order + "]\t\t\t["
-                       + order._name_orderer + "]\t\t\t\t[" + order.SumPrice() + "]";
+            return "[" + order._id + "]" + new string(' ',(WHITESPACE - Convert.ToString(order._id).Length)) + 
+                   "[" + order._name_order + "]" + new string(' ', (WHITESPACE - Convert.ToString(order._name_order).Length)) + 
+                   "[" + order._name_orderer + "]" + new string(' ', (WHITESPACE - Convert.ToString(order._name_orderer).Length)) + 
+                   "[" + order.SumPrice() + "]" + new string(' ', (WHITESPACE - Convert.ToString(order.SumPrice()).Length)) +
+                   "[" + order._status + "]";
         }
         /*-------------Методы манипуляциии-------------*/
         /// <summary>
@@ -111,6 +121,19 @@
         {
             return _orders[index].SumPrice();
         }
+        public float SumAllPrice()
+        {
+            float sum = 0;
+            foreach (var item in _orders)
+                foreach (var item_price in item._price)
+                    sum += item_price.Item2;
+
+            return sum;
+        }
+        public void SetStatus(int index)
+        {
+
+        }
 
         /*-------------Методы информации--------------*/
         public string GetOrderInfo(int index)
@@ -136,15 +159,20 @@
             {
                 Console.WriteLine(PrintBody(_orders[index]));
             }
+            Console.WriteLine(new string('_', TABLINE));
+            Console.WriteLine(new string(' ', 25) + "Общая сумма выроботки [" + SumAllPrice() + "]    " + 
+                                "Суммы выработки с учетом коэффициента [" + SumAllPrice()/7.5f + "]");
             Console.WriteLine();
         }
         public void PrintOrderInfo(int index)
         {
             PrintHat();
-            Console.WriteLine("[" + _orders[index]._id + "]\t\t\t\t[" + _orders[index]._name_order + "]\t\t\t[" + _orders[index]._name_orderer + "]");
+            Console.WriteLine("[" + _orders[index]._id + "]" + new string(' ', (WHITESPACE - Convert.ToString(_orders[index]._id).Length)) +
+                              "[" + _orders[index]._name_order + "]" + new string(' ', (WHITESPACE - Convert.ToString(_orders[index]._name_order).Length)) + 
+                              "[" + _orders[index]._name_orderer + "]");
             for (int index2 = 0; index2 <= _orders[index]._price.Count - 1; index2++)
             { 
-                Console.WriteLine("\t\t\t\t\t\t\t\t\t\t\t\t[" + _orders[index]._price[index2] + "]");
+                Console.WriteLine(new string(' ', 81) + _orders[index]._price[index2] + "]");
             }
         }
         public void PrintOrderInfo(string order)
