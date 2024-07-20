@@ -89,6 +89,9 @@ namespace DataBase
             dataBase.AddOrder("ЛУ-123", "Верон");
             dataBase.AddPrice("ЛУ-123", 1144);
             dataBase.AddPrice("ЛУ-123", 5456);
+            dataBase.AddOrder("ЛУ-666", "Сотона");
+            dataBase.AddPrice("ЛУ-666", 666);
+            dataBase.AddPrice("ЛУ-666", 13);
         }
         static void Main(string[] args)
         {
